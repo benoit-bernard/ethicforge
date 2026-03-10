@@ -29,3 +29,19 @@ wwwroot/lib/
 
 # Visual Studio Code
 .vscode/
+/.github/copilot-instructions.md
+/.github/workflows/deploy.yml
+/.github/specs/design.png
+/.github/specs/logo.png
+/.github/specs/specs.md
+/.github/instructions/anti-patterns-pervention.instructions.md
+/.github/instructions/architecture-governance.instructions.md
+/.github/instructions/change-history.instructions.md
+/.github/instructions/ci-cd-quality-gates.instructions.md
+/.github/instructions/cicd.instructions.md
+/.github/instructions/code-review.instructions.md
+/.github/instructions/document-quality.instructions.md
+/.github/instructions/documentation-init.instructions.md
+/.github/instructions/frontend-design.instructions.md
+/.github/instructions/frontend-razor.instructions.md
+/.github/instructions/language.instructions.md
