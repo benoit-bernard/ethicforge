@@ -22,31 +22,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup .NET SDK (try setup-dotnet)
-        uses: actions/setup-dotnet@v3
+      - name: Setup .NET 10 SDK
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 10.0.x
-          dotnet-quality: preview
-          global-json-file: ./global.json
+          dotnet-version: '10.0.x'
+          dotnet-quality: 'preview'
 
-      - name: Ensure .NET 10.0.201 is available (fallback installer)
-        run: |
-          set -euo pipefail
-          echo "Available SDKs:" || true
-          dotnet --list-sdks || true
-
-          if ! dotnet --list-sdks 2>/dev/null | grep -q "^10\.0\."; then
-            echo "Desired .NET 10 SDK not found. Installing dotnet 10.0.201 via dotnet-install.sh"
-            curl -sSL https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
-            chmod +x dotnet-install.sh
-            ./dotnet-install.sh --version 10.0.201 --install-dir $HOME/dotnet --channel 10.0
-            echo "$HOME/dotnet" >> $GITHUB_PATH
-          else
-            echo "A .NET 10 SDK is already installed."
-          fi
-
-      - name: Show installed .NET info
-        run: dotnet --info
+      - name: Show installed .NET version
+        run: dotnet --version
 
       - name: Cache NuGet packages
         uses: actions/cache@v4
