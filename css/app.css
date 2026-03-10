@@ -218,26 +218,57 @@ h1:focus {
 }
 
 /* ============================================================
-   Scroll Animations
+   Page Entry Animations (CSS-only — no JS dependency)
    ============================================================ */
 
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity var(--transition-slow), transform var(--transition-slow);
+.fade-in {
+    animation: fadeSlideUp 0.6s ease both;
 }
 
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+.fade-in-delay {
+    animation: fadeSlideUp 0.6s 0.15s ease both;
 }
 
-.animate-on-scroll[data-delay="1"] { transition-delay: 100ms; }
-.animate-on-scroll[data-delay="2"] { transition-delay: 200ms; }
-.animate-on-scroll[data-delay="3"] { transition-delay: 300ms; }
-.animate-on-scroll[data-delay="4"] { transition-delay: 400ms; }
-.animate-on-scroll[data-delay="5"] { transition-delay: 500ms; }
+/* Apply to a grid/list container: children animate in sequence */
+.stagger-in > * {
+    animation: fadeSlideUp 0.5s ease both;
+}
 
+    .stagger-in > *:nth-child(1) {
+        animation-delay: 0ms;
+    }
+
+    .stagger-in > *:nth-child(2) {
+        animation-delay: 80ms;
+    }
+
+    .stagger-in > *:nth-child(3) {
+        animation-delay: 160ms;
+    }
+
+    .stagger-in > *:nth-child(4) {
+        animation-delay: 240ms;
+    }
+
+    .stagger-in > *:nth-child(5) {
+        animation-delay: 320ms;
+    }
+
+    .stagger-in > *:nth-child(6) {
+        animation-delay: 400ms;
+    }
+
+    .stagger-in > *:nth-child(n+7) {
+        animation-delay: 480ms;
+    }
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in,
+    .fade-in-delay,
+    .stagger-in > * {
+        animation: none;
+    }
+}
 /* ============================================================
    Page Entry Animation
    ============================================================ */
