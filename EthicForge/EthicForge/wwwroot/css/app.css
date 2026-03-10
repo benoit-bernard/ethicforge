@@ -1,55 +1,57 @@
 /* ============================================================
-   EthicForge — Global Theme
+   EthicForge — Global Theme  (Dark Luxury / Or artisanal)
    ============================================================ */
 
 :root {
-    /* Palette */
-    --color-bg:               #080c18;
-    --color-surface:          #0e1428;
-    --color-surface-elevated: #141d38;
-    --color-border:           rgba(200, 124, 48, 0.18);
-    --color-border-subtle:    rgba(255, 255, 255, 0.06);
+    /* Palette de fond — chaud, sombre, forge */
+    --color-bg:               #1a1815;
+    --color-surface:          #211e1a;
+    --color-surface-elevated: #2b2720;
+    --color-border:           rgba(196, 163, 90, 0.18);
+    --color-border-subtle:    rgba(255, 240, 200, 0.05);
 
-    /* Brand */
-    --color-primary:          #c87c30;
-    --color-primary-light:    #e8a040;
-    --color-primary-glow:     rgba(200, 124, 48, 0.25);
-    --color-secondary:        #2060c8;
-    --color-accent:           #2db886;
+    /* Or — couleur de marque */
+    --color-primary:          #c4a35a;
+    --color-primary-light:    #d4b87a;
+    --color-primary-glow:     rgba(196, 163, 90, 0.18);
+    --color-secondary:        #8a7058;
+    --color-accent:           #9ab080;
 
-    /* Text */
-    --color-text:             #eef0f6;
-    --color-text-muted:       #7a8499;
-    --color-text-dim:         #4a5268;
+    /* Texte crème chaud */
+    --color-text:             #ede5d8;
+    --color-text-muted:       #8a7a68;
+    --color-text-dim:         #504540;
 
     /* Gradients */
-    --gradient-hero:          linear-gradient(135deg, #080c18 0%, #0e1428 40%, #0a1020 100%);
-    --gradient-forge:         linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    --gradient-card:          linear-gradient(145deg, #0e1428 0%, #141d38 100%);
+    --gradient-hero:          linear-gradient(180deg, #1a1815 0%, #1e1b17 100%);
+    --gradient-forge:         linear-gradient(135deg, #b8943e 0%, #d4b87a 100%);
+    --gradient-card:          linear-gradient(145deg, #211e1a 0%, #2b2720 100%);
 
-    /* Typography */
-    --font-heading: 'Playfair Display', Georgia, serif;
+    /* Typographie */
+    --font-display: 'Cinzel', 'Georgia', serif;
+    --font-heading: 'Cormorant Garamond', 'Georgia', serif;
     --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
 
-    /* Spacing */
+    /* Espacement */
     --section-padding: 5rem 0;
     --container-max:   1180px;
 
-    /* Radius */
-    --radius-sm:  6px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
+    /* Rayons */
+    --radius-sm:  4px;
+    --radius-md:  8px;
+    --radius-lg: 16px;
 
-    /* Shadows */
-    --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.3);
-    --shadow-glow:  0 0 32px var(--color-primary-glow);
-    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 24px var(--color-primary-glow);
+    /* Ombres */
+    --shadow-card:  0 4px 32px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.4);
+    --shadow-glow:  0 0 48px rgba(196, 163, 90, 0.2);
+    --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.7), 0 0 32px rgba(196, 163, 90, 0.25);
 
     /* Transitions */
     --transition-fast:   150ms ease;
     --transition-normal: 300ms ease;
     --transition-slow:   600ms ease;
 }
+
 
 /* ============================================================
    Reset & Base
@@ -139,20 +141,26 @@ h1:focus {
 
 .btn-primary {
     background: var(--gradient-forge);
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(200, 124, 48, 0.3);
+    color: #1a1815;
+    box-shadow: 0 4px 16px rgba(196, 163, 90, 0.25);
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    font-size: 0.82rem;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(200, 124, 48, 0.5);
-    color: #fff;
+    box-shadow: 0 8px 28px rgba(196, 163, 90, 0.45);
+    color: #1a1815;
 }
 
 .btn-outline {
     background: transparent;
     color: var(--color-primary-light);
-    border: 1.5px solid var(--color-border);
+    border: 1px solid var(--color-border);
+    font-family: var(--font-display);
+    letter-spacing: 0.06em;
+    font-size: 0.82rem;
 }
 
 .btn-outline:hover {
@@ -160,6 +168,53 @@ h1:focus {
     border-color: var(--color-primary);
     color: var(--color-primary-light);
     transform: translateY(-2px);
+}
+
+/* Bouton style crochets (screenshot) */
+.btn-bracket {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.75rem;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    border: 1px solid rgba(196, 163, 90, 0.35);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.btn-bracket::before,
+.btn-bracket::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    transition: all var(--transition-normal);
+}
+
+.btn-bracket::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary);
+}
+
+.btn-bracket::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 1px solid var(--color-primary);
+    border-right: 1px solid var(--color-primary);
+}
+
+.btn-bracket:hover {
+    background: rgba(196, 163, 90, 0.06);
+    border-color: rgba(196, 163, 90, 0.6);
+    color: var(--color-primary-light);
+    letter-spacing: 0.22em;
 }
 
 /* ============================================================

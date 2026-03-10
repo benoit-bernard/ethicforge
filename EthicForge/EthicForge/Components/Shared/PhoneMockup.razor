@@ -1,0 +1,55 @@
+<div class="phone-mockup phone-mockup--@Variant">
+    <div class="phone-mockup__frame">
+        <div class="phone-mockup__notch"></div>
+        <div class="phone-mockup__screen">
+            <div class="phone-mockup__statusbar">
+                <span>9:41</span>
+                <span class="phone-mockup__signal">●●●</span>
+            </div>
+            <div class="phone-mockup__app">
+                <div class="phone-app__header">
+                    <BrandOrnament Size="sm" />
+                    <span class="phone-app__title">WishList</span>
+                </div>
+                @if (Variant == "list")
+                {
+                    <div class="phone-app__list">
+                        <div class="phone-app__item phone-app__item--highlight">
+                            <span class="phone-app__item-icon">🎸</span>
+                            <span class="phone-app__item-text">Fender Telecaster</span>
+                        </div>
+                        <div class="phone-app__item">
+                            <span class="phone-app__item-icon">📚</span>
+                            <span class="phone-app__item-text">DDD by Evans</span>
+                        </div>
+                        <div class="phone-app__item">
+                            <span class="phone-app__item-icon">🌍</span>
+                            <span class="phone-app__item-text">Japan 2026</span>
+                        </div>
+                        <div class="phone-app__item phone-app__item--add">
+                            <span>+ Add a wish</span>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="phone-app__profile">
+                        <div class="phone-app__avatar"></div>
+                        <div class="phone-app__profile-name">My Wishes</div>
+                        <div class="phone-app__profile-sub">3 lists · 12 wishes</div>
+                        <div class="phone-app__stats">
+                            <div class="phone-app__stat"><span>12</span><small>Wishes</small></div>
+                            <div class="phone-app__stat"><span>3</span><small>Lists</small></div>
+                            <div class="phone-app__stat"><span>5</span><small>Shared</small></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="phone-mockup__home-bar"></div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Variant { get; set; } = "list";
+}

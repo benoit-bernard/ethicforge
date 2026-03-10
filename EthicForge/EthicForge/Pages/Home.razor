@@ -2,73 +2,121 @@
 
 <PageTitle>EthicForge — Ethical Digital Craftsmanship</PageTitle>
 
-<HeroSection Title="Forge a responsible technology."
-             Subtitle="EthicForge is a platform bringing together applications built on ethical, sovereign and transparent principles — because technology must serve people, not exploit them."
-             Eyebrow="Ethical · Sovereign · Open">
-    <Actions>
-        <a class="btn btn-primary" href="/philosophy">Our Philosophy</a>
-        <a class="btn btn-outline" href="/wishlist">Discover WishList</a>
-    </Actions>
-</HeroSection>
+<!-- ====================================================
+     HERO — Logo centré plein écran
+     ==================================================== -->
+<section class="home-hero">
+    <div class="home-hero__inner">
+        <BrandOrnament Size="xl" Animated="true" />
+        <h1 class="home-hero__brand">ETHICFORGE</h1>
+        <p class="home-hero__sub">Ethical digital craftsmanship</p>
+    </div>
+    <div class="home-hero__scroll-hint">
+        <span class="home-hero__scroll-line"></span>
+        <span class="home-hero__scroll-label">Scroll</span>
+    </div>
+</section>
 
-<section class="section section--alt">
+<!-- ====================================================
+     TAGLINE — Grande accroche + maquettes téléphone
+     ==================================================== -->
+<section class="home-tagline">
+    <div class="home-tagline__botanical" aria-hidden="true"></div>
     <div class="container">
-        <SectionTitle Title="Our commitments"
-                      Subtitle="Every application published on EthicForge respects the same core principles, without exception."
-                      Eyebrow="Values" />
-        <div class="values-grid">
-            <ValueCard Icon="🇪🇺" Title="European sovereignty"
-                       Description="All infrastructures are hosted in Europe and comply with French and European regulations (GDPR)."
-                       Delay="1" />
-            <ValueCard Icon="🔒" Title="Privacy first"
-                       Description="We collect the minimum data necessary for the operation of services. Your data belongs to you."
-                       Delay="2" />
-            <ValueCard Icon="⚖️" Title="Legal compliance"
-                       Description="Full compliance with French and European law. No grey areas, no ambiguity."
-                       Delay="3" />
-            <ValueCard Icon="🧩" Title="Open source when possible"
-                       Description="Code is open and documented whenever feasible. Transparency is not just a promise — it's a practice."
-                       Delay="4" />
-            <ValueCard Icon="🚫" Title="No venture capital"
-                       Description="No pressure from investment funds. Products are developed for their utility, not speculation."
-                       Delay="5" />
-            <ValueCard Icon="✦" Title="Artisanal craftsmanship"
-                       Description="Like a traditional forge, each tool is shaped with care. Quality over quantity, always."
-                       Delay="1" />
+        <div class="home-tagline__layout">
+            <div class="home-tagline__content animate-on-scroll">
+                <h2 class="home-tagline__heading">
+                    Forger l'éthique,<br />
+                    Tisser la technologie.
+                </h2>
+                <p class="home-tagline__body">
+                    EthicForge est une forge numérique artisanale. Chaque application est construite sur des principes
+                    éthiques clairs — respect de la vie privée, souveraineté européenne, transparence absolue.
+                </p>
+                <a class="btn-bracket home-tagline__cta" href="/philosophy">
+                    Explorer la philosophie
+                </a>
+            </div>
+            <div class="home-tagline__phones animate-on-scroll" data-delay="2">
+                <div class="phone-stack">
+                    <div class="phone-stack__back">
+                        <PhoneMockup Variant="profile" />
+                    </div>
+                    <div class="phone-stack__front">
+                        <PhoneMockup Variant="list" />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="section">
+<!-- ====================================================
+     MANIFESTO — 4 piliers + téléphone + badge
+     ==================================================== -->
+<section class="home-manifesto">
     <div class="container">
-        <SectionTitle Title="Our applications"
-                      Subtitle="Each application is presented with full transparency: how it works, what data is collected, technical choices and values."
-                      Eyebrow="Applications" />
-        <div class="apps-grid">
-            <AppCard Icon="🎁"
-                     Title="WishList"
-                     Description="A simple, private wishlist app to organize and share your wishes with the people you love — without ads, without tracking, without selling your data."
-                     Status="Beta"
-                     Href="/wishlist"
-                     Tags='@(new[]{ "Privacy", "Open Source", "Free" })' />
+        <h2 class="home-manifesto__title animate-on-scroll">MANIFESTO</h2>
+
+        <div class="home-manifesto__layout">
+            <div class="home-manifesto__grid">
+                <div class="manifesto-item animate-on-scroll" data-delay="1">
+                    <div class="manifesto-item__icon">
+                        <BrandOrnament Size="sm" />
+                    </div>
+                    <div>
+                        <h3>Privacy First</h3>
+                        <p>Nous collectons uniquement le minimum indispensable au fonctionnement du service. Vos données vous appartiennent.</p>
+                    </div>
+                </div>
+
+                <div class="manifesto-item animate-on-scroll" data-delay="2">
+                    <div class="manifesto-item__icon">
+                        <BrandOrnament Size="sm" />
+                    </div>
+                    <div>
+                        <h3>Souveraineté européenne</h3>
+                        <p>Toutes nos infrastructures sont hébergées en Europe et conformes au RGPD et au droit français.</p>
+                    </div>
+                </div>
+
+                <div class="manifesto-item animate-on-scroll" data-delay="3">
+                    <div class="manifesto-item__icon">
+                        <BrandOrnament Size="sm" />
+                    </div>
+                    <div>
+                        <h3>Transparence totale</h3>
+                        <p>Nos choix techniques et politiques de données sont publiquement documentés. Pas de zones d'ombre.</p>
+                    </div>
+                </div>
+
+                <div class="manifesto-item animate-on-scroll" data-delay="4">
+                    <div class="manifesto-item__icon">
+                        <BrandOrnament Size="sm" />
+                    </div>
+                    <div>
+                        <h3>Indépendance</h3>
+                        <p>Aucun fonds d'investissement. Les produits sont développés pour leur utilité, pas pour la spéculation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-manifesto__phone animate-on-scroll" data-delay="2">
+                <PhoneMockup Variant="list" />
+            </div>
         </div>
-        <p class="apps-more animate-on-scroll">More applications are in development. Stay tuned.</p>
+
+        <!-- Badge certifié -->
+        <div class="home-badge animate-on-scroll">
+            <div class="home-badge__inner">
+                <BrandOrnament Size="md" />
+                <div class="home-badge__text">
+                    <span class="home-badge__name">EthicForge</span>
+                    <span class="home-badge__label">Certified</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="section section--alt">
-    <div class="container">
-        <div class="manifesto animate-on-scroll">
-            <span class="manifesto__eyebrow badge badge--primary">Our Story</span>
-            <blockquote class="manifesto__quote">
-                "EthicForge was born from a simple observation: modern technology shapes our lives, but too often without transparency, without respect for privacy and without digital sovereignty."
-            </blockquote>
-            <p class="manifesto__body">
-                Most digital services are built for data extraction, growth at any cost and dependency on foreign infrastructure.
-                EthicForge proposes another path — like an artisanal forge where every tool is shaped with care.
-            </p>
-            <a class="btn btn-outline" href="/philosophy">Read our full philosophy →</a>
-        </div>
-    </div>
-</section>
 
