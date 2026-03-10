@@ -1,5 +1,7 @@
 ﻿@inherits LayoutComponentBase
-@inject ScrollAnimationService AnimationService
+@inject ScrollAnimationService ScrollService
+@inject NavigationManager Navigation
+@implements IDisposable
 
 <Header />
 
@@ -10,12 +12,19 @@
 <Footer />
 
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override void OnInitialized()
     {
-        if (firstRender)
-        {
-            await AnimationService.InitAsync();
-        }
+        Navigation.LocationChanged += OnLocationChanged;
+    }
+
+    private async void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        await ScrollService.ScrollToTopAsync();
+    }
+
+    public void Dispose()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
     }
 }
 
