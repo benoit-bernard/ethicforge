@@ -1,7 +1,10 @@
 # Visual Studio
 .vs/
- .git/
- .github/
+.git/
+.github/
+/.vs/
+/.git/
+/.github/
 *.user
 *.suo
 
