@@ -20,6 +20,9 @@
     <File Path="../.github/specs/logo.png" />
     <File Path="../.github/specs/specs.md" />
   </Folder>
+  <Folder Name="/.github/todo/">
+    <File Path="notes.md" />
+  </Folder>
   <Folder Name="/.github/workflows/">
     <File Path="../.github/workflows/deploy.yml" />
   </Folder>

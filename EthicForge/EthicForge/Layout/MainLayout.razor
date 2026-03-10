@@ -1,6 +1,5 @@
 ﻿@inherits LayoutComponentBase
 @inject ScrollAnimationService AnimationService
-@implements IAsyncDisposable
 
 <Header />
 
@@ -13,15 +12,7 @@
 @code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
-        {
-            await AnimationService.InitAsync();
-        }
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-        await Task.CompletedTask;
+        await AnimationService.InitAsync();
     }
 }
 
