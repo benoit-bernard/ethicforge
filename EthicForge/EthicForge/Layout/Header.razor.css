@@ -49,7 +49,7 @@
 .site-header__nav {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: clamp(0.75rem, 1.2vw, 1.5rem);
     flex: 1;
     justify-content: center;
 }
@@ -126,6 +126,7 @@
         background: rgba(26, 24, 21, 0.97);
         backdrop-filter: blur(20px);
         padding: 1rem;
+        gap: 0.5rem;
         transform: translateY(-110%);
         opacity: 0;
         transition: transform var(--transition-normal), opacity var(--transition-normal);
@@ -200,7 +201,7 @@
         background: rgba(8, 12, 24, 0.97);
         backdrop-filter: blur(20px);
         padding: 1rem;
-        gap: 0.25rem;
+        gap: 0.5rem;
         transform: translateY(-110%);
         opacity: 0;
         transition: transform var(--transition-normal), opacity var(--transition-normal);
