@@ -116,6 +116,11 @@ jobs:
           echo "Publish tree:" || true
           ls -la publish/wwwroot || true
 
+      - name: Ensure CNAME file is present in publish output
+        run: |
+          mkdir -p publish/wwwroot
+          echo 'ethicforge.com' > publish/wwwroot/CNAME
+
       - name: Deploy to GitHub Pages (public branch)
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -123,7 +128,5 @@ jobs:
           publish_dir: ./publish/wwwroot
           publish_branch: public
           allow_empty_commit: false
-          # keep_files=false will remove files on the target branch before publishing (clean behavior)
-          keep_files: false
-          # If your repository branch protection disallows pushes from GitHub Actions,
-          # consider using a dedicated deploy key or allow GitHub Actions to push.
+          keep_files: true
+          cname: 'ethicforge.com'
