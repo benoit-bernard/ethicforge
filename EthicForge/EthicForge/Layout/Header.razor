@@ -1,0 +1,30 @@
+<header class="site-header @(IsScrolled ? "site-header--scrolled" : "")">
+    <div class="site-header__inner container">
+        <a class="site-header__brand" href="/">
+            <span class="site-header__brand-icon">⚒</span>
+            <span class="site-header__brand-name">EthicForge</span>
+        </a>
+
+        <nav class="site-header__nav @(IsMenuOpen ? "site-header__nav--open" : "")" aria-label="Main navigation">
+            <NavLink class="site-header__link" href="/" Match="NavLinkMatch.All">Home</NavLink>
+            <NavLink class="site-header__link" href="/philosophy">Philosophy</NavLink>
+            <NavLink class="site-header__link" href="/wishlist">WishList App</NavLink>
+            <NavLink class="site-header__link" href="/contact">Contact</NavLink>
+        </nav>
+
+        <button class="site-header__burger @(IsMenuOpen ? "site-header__burger--open" : "")"
+                aria-label="Toggle navigation"
+                @onclick="ToggleMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+@code {
+    private bool IsScrolled { get; set; }
+    private bool IsMenuOpen { get; set; }
+
+    private void ToggleMenu() => IsMenuOpen = !IsMenuOpen;
+}

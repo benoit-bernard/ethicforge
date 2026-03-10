@@ -1,0 +1,30 @@
+<div class="app-card animate-on-scroll" data-delay="@Delay">
+    <div class="app-card__header">
+        <div class="app-card__icon">@Icon</div>
+        <span class="badge badge--accent">@Status</span>
+    </div>
+    <h3 class="app-card__title">@Title</h3>
+    <p class="app-card__description">@Description</p>
+    <div class="app-card__tags">
+        @foreach (var tag in Tags)
+        {
+            <span class="badge badge--secondary">@tag</span>
+        }
+    </div>
+    @if (!string.IsNullOrEmpty(Href))
+    {
+        <a class="app-card__link btn btn-outline" href="@Href">
+            Discover →
+        </a>
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired] public string Icon { get; set; } = string.Empty;
+    [Parameter, EditorRequired] public string Title { get; set; } = string.Empty;
+    [Parameter, EditorRequired] public string Description { get; set; } = string.Empty;
+    [Parameter] public string Status { get; set; } = "Beta";
+    [Parameter] public string Href { get; set; } = string.Empty;
+    [Parameter] public IReadOnlyList<string> Tags { get; set; } = [];
+    [Parameter] public string Delay { get; set; } = "0";
+}

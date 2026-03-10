@@ -1,7 +1,74 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>EthicForge — Ethical Digital Craftsmanship</PageTitle>
 
-<h1>Hello, world!</h1>
+<HeroSection Title="Forge a responsible technology."
+             Subtitle="EthicForge is a platform bringing together applications built on ethical, sovereign and transparent principles — because technology must serve people, not exploit them."
+             Eyebrow="Ethical · Sovereign · Open">
+    <Actions>
+        <a class="btn btn-primary" href="/philosophy">Our Philosophy</a>
+        <a class="btn btn-outline" href="/wishlist">Discover WishList</a>
+    </Actions>
+</HeroSection>
 
-Welcome to your new app.
+<section class="section section--alt">
+    <div class="container">
+        <SectionTitle Title="Our commitments"
+                      Subtitle="Every application published on EthicForge respects the same core principles, without exception."
+                      Eyebrow="Values" />
+        <div class="values-grid">
+            <ValueCard Icon="🇪🇺" Title="European sovereignty"
+                       Description="All infrastructures are hosted in Europe and comply with French and European regulations (GDPR)."
+                       Delay="1" />
+            <ValueCard Icon="🔒" Title="Privacy first"
+                       Description="We collect the minimum data necessary for the operation of services. Your data belongs to you."
+                       Delay="2" />
+            <ValueCard Icon="⚖️" Title="Legal compliance"
+                       Description="Full compliance with French and European law. No grey areas, no ambiguity."
+                       Delay="3" />
+            <ValueCard Icon="🧩" Title="Open source when possible"
+                       Description="Code is open and documented whenever feasible. Transparency is not just a promise — it's a practice."
+                       Delay="4" />
+            <ValueCard Icon="🚫" Title="No venture capital"
+                       Description="No pressure from investment funds. Products are developed for their utility, not speculation."
+                       Delay="5" />
+            <ValueCard Icon="✦" Title="Artisanal craftsmanship"
+                       Description="Like a traditional forge, each tool is shaped with care. Quality over quantity, always."
+                       Delay="1" />
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <SectionTitle Title="Our applications"
+                      Subtitle="Each application is presented with full transparency: how it works, what data is collected, technical choices and values."
+                      Eyebrow="Applications" />
+        <div class="apps-grid">
+            <AppCard Icon="🎁"
+                     Title="WishList"
+                     Description="A simple, private wishlist app to organize and share your wishes with the people you love — without ads, without tracking, without selling your data."
+                     Status="Beta"
+                     Href="/wishlist"
+                     Tags='@(new[]{ "Privacy", "Open Source", "Free" })' />
+        </div>
+        <p class="apps-more animate-on-scroll">More applications are in development. Stay tuned.</p>
+    </div>
+</section>
+
+<section class="section section--alt">
+    <div class="container">
+        <div class="manifesto animate-on-scroll">
+            <span class="manifesto__eyebrow badge badge--primary">Our Story</span>
+            <blockquote class="manifesto__quote">
+                "EthicForge was born from a simple observation: modern technology shapes our lives, but too often without transparency, without respect for privacy and without digital sovereignty."
+            </blockquote>
+            <p class="manifesto__body">
+                Most digital services are built for data extraction, growth at any cost and dependency on foreign infrastructure.
+                EthicForge proposes another path — like an artisanal forge where every tool is shaped with care.
+            </p>
+            <a class="btn btn-outline" href="/philosophy">Read our full philosophy →</a>
+        </div>
+    </div>
+</section>
+

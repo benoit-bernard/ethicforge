@@ -1,0 +1,18 @@
+<div class="section-title animate-on-scroll @(Centered ? "section-title--centered" : "")">
+    @if (!string.IsNullOrEmpty(Eyebrow))
+    {
+        <span class="section-title__eyebrow">@Eyebrow</span>
+    }
+    <h2 class="section-title__heading">@Title</h2>
+    @if (!string.IsNullOrEmpty(Subtitle))
+    {
+        <p class="section-title__subtitle">@Subtitle</p>
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired] public string Title { get; set; } = string.Empty;
+    [Parameter] public string Subtitle { get; set; } = string.Empty;
+    [Parameter] public string Eyebrow { get; set; } = string.Empty;
+    [Parameter] public bool Centered { get; set; } = true;
+}

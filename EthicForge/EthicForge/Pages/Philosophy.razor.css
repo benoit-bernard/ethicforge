@@ -1,0 +1,165 @@
+.philosophy-hero {
+    position: relative;
+    padding: 10rem 0 6rem;
+    overflow: hidden;
+    background: var(--gradient-hero);
+    text-align: center;
+}
+
+.philosophy-hero__glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    background: radial-gradient(circle, rgba(200, 124, 48, 0.1) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.philosophy-hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    animation: fadeSlideUp 0.7s ease both;
+}
+
+.philosophy-hero__title {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #eef0f6 30%, var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.philosophy-hero__title em {
+    font-style: italic;
+    -webkit-text-fill-color: var(--color-primary-light);
+}
+
+.philosophy-hero__subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--color-text-muted);
+    max-width: 620px;
+    line-height: 1.7;
+}
+
+/* Intro */
+.philosophy-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+}
+
+.philosophy-intro strong {
+    color: var(--color-text);
+}
+
+/* Principles */
+.principles-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.principle {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--gradient-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.principle:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.principle__number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    opacity: 0.4;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 3rem;
+}
+
+.principle__content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.principle__content p {
+    font-size: 0.93rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.principle__content em {
+    color: var(--color-primary-light);
+    font-style: italic;
+}
+
+/* Manifesto block */
+.manifesto-block {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.manifesto-block__title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.manifesto-block p {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+}
+
+.manifesto-block strong {
+    color: var(--color-primary-light);
+}
+
+.manifesto-block em {
+    color: var(--color-text);
+}
+
+.manifesto-block__cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .principles-list {
+        grid-template-columns: 1fr;
+    }
+}

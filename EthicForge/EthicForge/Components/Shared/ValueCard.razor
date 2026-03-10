@@ -1,0 +1,14 @@
+<div class="value-card animate-on-scroll" data-delay="@Delay">
+    <div class="value-card__icon">@Icon</div>
+    <div class="value-card__body">
+        <h3 class="value-card__title">@Title</h3>
+        <p class="value-card__description">@Description</p>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public string Icon { get; set; } = string.Empty;
+    [Parameter, EditorRequired] public string Title { get; set; } = string.Empty;
+    [Parameter, EditorRequired] public string Description { get; set; } = string.Empty;
+    [Parameter] public string Delay { get; set; } = "0";
+}

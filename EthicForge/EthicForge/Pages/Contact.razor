@@ -1,0 +1,81 @@
+@page "/contact"
+
+<PageTitle>Contact — EthicForge</PageTitle>
+
+<div class="contact-hero">
+    <div class="container">
+        <div class="contact-hero__content animate-on-scroll">
+            <span class="badge badge--primary">Contact</span>
+            <h1>Let's talk</h1>
+            <p>Have a question, a project idea, or want to collaborate? We'd love to hear from you.</p>
+        </div>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="contact-layout">
+            <div class="contact-info animate-on-scroll">
+                <h2>Get in touch</h2>
+                <p>
+                    EthicForge is an independent initiative. There are no sales teams, no automated bots —
+                    just a real person who reads every message.
+                </p>
+
+                <div class="contact-channels">
+                    <a class="contact-channel" href="mailto:contact@ethicforge.com">
+                        <span class="contact-channel__icon">✉</span>
+                        <div>
+                            <strong>Email</strong>
+                            <span>contact@ethicforge.com</span>
+                        </div>
+                    </a>
+                    <a class="contact-channel" href="https://github.com/benoit-bernard/ethicforge" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-channel__icon">⌥</span>
+                        <div>
+                            <strong>GitHub</strong>
+                            <span>github.com/benoit-bernard/ethicforge</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact-note">
+                    <span class="badge badge--accent">🔒 Privacy</span>
+                    <p>
+                        Any information you share with us is used solely to respond to your request.
+                        We do not store, sell or share your data with third parties.
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrap animate-on-scroll" data-delay="2">
+                <div class="contact-form">
+                    <h3>Send a message</h3>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-name">Name</label>
+                        <input class="form-control" id="contact-name" type="text" placeholder="Your name" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-email">Email</label>
+                        <input class="form-control" id="contact-email" type="email" placeholder="you@example.com" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-subject">Subject</label>
+                        <input class="form-control" id="contact-subject" type="text" placeholder="What is this about?" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-message">Message</label>
+                        <textarea class="form-control" id="contact-message" rows="5" placeholder="Your message..."></textarea>
+                    </div>
+                    <a class="btn btn-primary contact-form__submit"
+                       href="mailto:contact@ethicforge.com?subject=Contact%20from%20EthicForge">
+                        Send via email ✉
+                    </a>
+                    <p class="contact-form__hint">
+                        This form opens your email client. No data is sent to any server from this page.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

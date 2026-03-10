@@ -1,39 +1,414 @@
+/* ============================================================
+   EthicForge — Global Theme
+   ============================================================ */
+
+:root {
+    /* Palette */
+    --color-bg:               #080c18;
+    --color-surface:          #0e1428;
+    --color-surface-elevated: #141d38;
+    --color-border:           rgba(200, 124, 48, 0.18);
+    --color-border-subtle:    rgba(255, 255, 255, 0.06);
+
+    /* Brand */
+    --color-primary:          #c87c30;
+    --color-primary-light:    #e8a040;
+    --color-primary-glow:     rgba(200, 124, 48, 0.25);
+    --color-secondary:        #2060c8;
+    --color-accent:           #2db886;
+
+    /* Text */
+    --color-text:             #eef0f6;
+    --color-text-muted:       #7a8499;
+    --color-text-dim:         #4a5268;
+
+    /* Gradients */
+    --gradient-hero:          linear-gradient(135deg, #080c18 0%, #0e1428 40%, #0a1020 100%);
+    --gradient-forge:         linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    --gradient-card:          linear-gradient(145deg, #0e1428 0%, #141d38 100%);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+    /* Spacing */
+    --section-padding: 5rem 0;
+    --container-max:   1180px;
+
+    /* Radius */
+    --radius-sm:  6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    /* Shadows */
+    --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.3);
+    --shadow-glow:  0 0 32px var(--color-primary-glow);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 24px var(--color-primary-glow);
+
+    /* Transitions */
+    --transition-fast:   150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow:   600ms ease;
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+a {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary);
 }
 
 h1:focus {
     outline: none;
 }
 
-a, .btn-link {
-    color: #0071c1;
+/* ============================================================
+   Layout Utilities
+   ============================================================ */
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+.section--alt {
+    background-color: var(--color-surface);
+}
+
+.section--dark {
+    background-color: var(--color-surface-elevated);
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    letter-spacing: 0.02em;
 }
 
 .btn-primary {
+    background: var(--gradient-forge);
     color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    box-shadow: 0 4px 16px rgba(200, 124, 48, 0.3);
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(200, 124, 48, 0.5);
+    color: #fff;
 }
 
-.content {
-    padding-top: 1.1rem;
+.btn-outline {
+    background: transparent;
+    color: var(--color-primary-light);
+    border: 1.5px solid var(--color-border);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary-glow);
+    border-color: var(--color-primary);
+    color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   Scroll Animations
+   ============================================================ */
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-on-scroll[data-delay="1"] { transition-delay: 100ms; }
+.animate-on-scroll[data-delay="2"] { transition-delay: 200ms; }
+.animate-on-scroll[data-delay="3"] { transition-delay: 300ms; }
+.animate-on-scroll[data-delay="4"] { transition-delay: 400ms; }
+.animate-on-scroll[data-delay="5"] { transition-delay: 500ms; }
+
+/* ============================================================
+   Page Entry Animation
+   ============================================================ */
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 20px var(--color-primary-glow); }
+    50%       { box-shadow: 0 0 48px rgba(200, 124, 48, 0.45); }
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+
+/* ============================================================
+   Loading Screen
+   ============================================================ */
+
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--color-bg);
+}
+
+.loading-forge {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+}
+
+.loading-forge circle {
+    fill: none;
+    stroke: var(--color-surface-elevated);
+    stroke-width: 4px;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
+
+.loading-forge circle:last-child {
+    stroke: var(--color-primary);
+    stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.64), 500%;
+    transition: stroke-dasharray 0.05s ease-in-out;
+}
+
+.loading-progress-text {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.loading-progress-text::after {
+    content: attr(class);
+    content: "Loading…";
+}
+
+/* ============================================================
+   Error UI
+   ============================================================ */
+
+#blazor-error-ui {
+    color-scheme: dark;
+    background: #1a0a0a;
+    border-top: 2px solid #c83030;
+    color: #f0d0d0;
+    bottom: 0;
+    box-shadow: 0 -2px 12px rgba(200, 48, 48, 0.3);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.75rem 1.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    font-size: 0.9rem;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 0.6rem;
+    font-size: 1.1rem;
+}
+
+#blazor-error-ui .reload {
+    color: #e88080;
+    text-decoration: underline;
+    margin-left: 0.5rem;
+}
+
+.blazor-error-boundary {
+    background: #1a0a0a;
+    border: 1px solid #c83030;
+    border-radius: var(--radius-md);
+    padding: 1rem 1rem 1rem 3.5rem;
+    color: #f0d0d0;
+    position: relative;
+}
+
+.blazor-error-boundary::before {
+    content: "⚠";
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+}
+
+.blazor-error-boundary::after {
+    content: "An error has occurred.";
+}
+
+/* ============================================================
+   Form Elements
+   ============================================================ */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    letter-spacing: 0.03em;
+}
+
+.form-control {
+    background: var(--color-surface-elevated);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-glow);
+}
+
+.form-control::placeholder {
+    color: var(--color-text-dim);
 }
 
 .valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
+    border-color: var(--color-accent);
 }
 
 .invalid {
-    outline: 1px solid red;
+    border-color: #c83030;
 }
 
 .validation-message {
-    color: red;
+    color: #e87070;
+    font-size: 0.82rem;
+}
+
+/* ============================================================
+   Divider
+   ============================================================ */
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+    margin: 0;
+}
+
+/* ============================================================
+   Badge
+   ============================================================ */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.badge--primary {
+    background: var(--color-primary-glow);
+    color: var(--color-primary-light);
+    border: 1px solid var(--color-border);
+}
+
+.badge--accent {
+    background: rgba(45, 184, 134, 0.15);
+    color: var(--color-accent);
+    border: 1px solid rgba(45, 184, 134, 0.3);
+}
+
+.badge--secondary {
+    background: rgba(32, 96, 200, 0.15);
+    color: #5090e8;
+    border: 1px solid rgba(32, 96, 200, 0.3);
 }
 
 #blazor-error-ui {

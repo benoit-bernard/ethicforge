@@ -1,0 +1,51 @@
+.section-title {
+    margin-bottom: 3rem;
+}
+
+.section-title--centered {
+    text-align: center;
+}
+
+.section-title__eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.section-title__eyebrow::before,
+.section-title__eyebrow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 1px;
+    background: var(--color-primary);
+    opacity: 0.6;
+}
+
+.section-title__eyebrow::before { right: 100%; transform: translateX(8px); }
+.section-title__eyebrow::after  { left: 100%;  transform: translateX(-8px); }
+
+.section-title__heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.section-title__subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+}
+
+.section-title--centered .section-title__subtitle {
+    margin: 0 auto;
+}
