@@ -666,6 +666,8 @@
     text-decoration: none;
     transition: color var(--transition-fast);
     white-space: nowrap;
+    /* Espacement adaptatif entre les liens (≈20px sur écran de référence) */
+    margin-inline: 0 clamp(0.9rem, 1.4vw, 1.25rem);
 }
 
 .site-header__link:hover[b-1p9797nj6e] {
