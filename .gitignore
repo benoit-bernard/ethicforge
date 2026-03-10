@@ -1,0 +1,31 @@
+# Visual Studio
+.vs/
+ .git/
+ .github/
+*.user
+*.suo
+
+# Build output
+Engawa/publish/
+www/publish/
+publish/
+
+# Build
+bin/
+obj/
+
+# NuGet
+packages/
+*.nupkg
+
+# Web
+wwwroot/lib/
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode/

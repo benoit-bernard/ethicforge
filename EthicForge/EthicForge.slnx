@@ -1,0 +1,27 @@
+<Solution>
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/.github/instructions/">
+    <File Path="../.github/instructions/anti-patterns-pervention.instructions.md" />
+    <File Path="../.github/instructions/architecture-governance.instructions.md" />
+    <File Path="../.github/instructions/change-history.instructions.md" />
+    <File Path="../.github/instructions/ci-cd-quality-gates.instructions.md" />
+    <File Path="../.github/instructions/cicd.instructions.md" />
+    <File Path="../.github/instructions/code-review.instructions.md" />
+    <File Path="../.github/instructions/document-quality.instructions.md" />
+    <File Path="../.github/instructions/documentation-init.instructions.md" />
+    <File Path="../.github/instructions/frontend-design.instructions.md" />
+    <File Path="../.github/instructions/frontend-razor.instructions.md" />
+    <File Path="../.github/instructions/language.instructions.md" />
+  </Folder>
+  <Folder Name="/.github/specs/">
+    <File Path="../.github/specs/design.png" />
+    <File Path="../.github/specs/logo.png" />
+    <File Path="../.github/specs/specs.md" />
+  </Folder>
+  <Folder Name="/.github/workflows/">
+    <File Path="../.github/workflows/deploy.yml" />
+  </Folder>
+  <Project Path="EthicForge/EthicForge.csproj" />
+</Solution>
