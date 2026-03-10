@@ -12,4 +12,4 @@ builder.Services.AddScoped<ScrollAnimationService>();
 
 await builder.Build().RunAsync();
 
- 
+  
