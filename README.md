@@ -1,2 +1,0 @@
-# ethicforge
-ethicforge hosting
