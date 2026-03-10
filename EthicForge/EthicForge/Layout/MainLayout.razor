@@ -12,7 +12,10 @@
 @code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        await AnimationService.InitAsync();
+        if (firstRender)
+        {
+            await AnimationService.InitAsync();
+        }
     }
 }
 

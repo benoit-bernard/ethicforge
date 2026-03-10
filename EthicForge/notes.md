@@ -21,4 +21,14 @@ Pour de nombreux événements, environ 80 % des effets sont le résultat de 20 %
 Loi de Zipf
 Dans une langue, la fréquence d'un mot est inversement proportionnelle à son rang dans la liste des mots les plus fréquents. (George Kingsley Zipf, 1935)
 
+L'optmisation anticipée est la racine de tous les maux. (Donald Knuth, 1974)
 
+Loi de Conway
+Tout système conçu par une organisation finira par refléter la structure de communication de cette organisation. (Melvin Conway, 1968)
+
+Loi de Brooks
+Ajouter des programmeurs à un projet en retard ne fait que le retarder davantage. (Frederick P. Brooks Jr., 1975)
+
+quand ce n'est pas logique c'est historique
+
+stranger fig
