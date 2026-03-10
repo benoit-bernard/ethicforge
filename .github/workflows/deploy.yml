@@ -26,6 +26,7 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 10.0.x
+          include-prerelease: true
 
       - name: Cache NuGet packages
         uses: actions/cache@v4
@@ -36,10 +37,10 @@ jobs:
             nuget-${{ runner.os }}-
 
       - name: Restore project
-        run: dotnet restore EthicForge/EthicForge/EthicForge.csproj
+        run: dotnet restore EthicForge/EthicForge.csproj
 
       - name: Build project
-        run: dotnet build EthicForge/EthicForge/EthicForge.csproj --configuration Release --no-restore
+        run: dotnet build EthicForge/EthicForge.csproj --configuration Release --no-restore
 
       - name: Run tests (if any)
         run: |
@@ -53,7 +54,7 @@ jobs:
           fi
 
       - name: Publish project
-        run: dotnet publish EthicForge/EthicForge/EthicForge.csproj -c Release -o publish
+        run: dotnet publish EthicForge/EthicForge.csproj -c Release -o publish
 
       - name: Verify publish output
         run: |
